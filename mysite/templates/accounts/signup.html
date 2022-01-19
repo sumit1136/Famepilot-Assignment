@@ -1,0 +1,45 @@
+{% load rest_framework %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="row">
+        <h1 class="text-center">Registration Page</h1>
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6">
+            <form action="/signup/" method="post">
+                {% csrf_token %}
+                <!-- <label for="username" class="form-label">Username</label>
+                <input type="text" name="username" class="form-control">
+                <label for="fname" class="form-label">First Name</label>
+                <input type="text" name="fname" class="form-control">
+                <label for="lname" class="form-label">Last Name</label>
+                <input type="text" name="lname" class="form-control">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" class="form-control">
+                <label for="mobile" class="form-label">Mobile</label>
+                <input type="tel" name="phone" id="phone" class="form-control" placeholder="XXXXXXXXXX">
+                <label for="DOB" class="form-label">Date of Birth</label>
+                <input type="date" name="DOB" id="DOB" class="form-control"><br>
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="passw" id="passw" class="form-control"> -->
+                {% render_form serializer template_pack='rest_framework/vertical' %}
+                <input type="submit" value="Sign Up" class="btn btn-primary">
+            </form>
+        </div>
+        <div class="col-md-3">
+            <a href="/login" class="btn btn-primary">Sign In</a>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
